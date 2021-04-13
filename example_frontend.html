@@ -8,5 +8,16 @@
 </head>
 <body>
     <div>This HTML file isn't part of the Rails app. It is here to help you test JS against Rails as you follow along.</div>
+
+    <div class="container"></div>
+
+    <script>
+        const container = document.querySelector(".container");
+        fetch("http://localhost:3000/birds")
+        .then(res => res.json())
+        .then(obj => {
+            container.innerHTML = obj[1].name;
+        });
+    </script>
 </body>
 </html>
